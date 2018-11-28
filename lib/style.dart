@@ -25,5 +25,15 @@ TextStyle detailStyle() {
         color: Colors.black,
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.normal,
-        fontSize: 25.0);
+        fontSize: 35.0);
 }
+
+TextStyle titleStyle() {
+  return
+    TextStyle(
+        color: Colors.green,
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.bold,
+        fontSize: 28.0);
+}
+

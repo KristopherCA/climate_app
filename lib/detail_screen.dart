@@ -22,43 +22,97 @@ class _DetailScreenState extends State<DetailScreen> {
       body: GridView.count(
         crossAxisSpacing: 3.0,
           crossAxisCount: 2,
+      padding: EdgeInsets.all(5.0),
       children: <Widget>[
-        ListTile(
-          title: Text(
-          " Temperature: ${field['main']['temp'].toStringAsFixed(0)}" + "°F",
-  style: detailStyle(),
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ListTile(
+              title: Text("Temperature",
+              style: titleStyle(),),
+            ),
+            ListTile(
+              title: Text(  "${field['main']['temp'].toStringAsFixed(0)}" + "°F",
+              style: detailStyle(),
+              ),
+            )
+          ],
         ),
-        ListTile(
-          title: Text(
-            "Pressure: ${field['main']['pressure']} PSI".toString(),
-            style: detailStyle(),
-          ),
+       Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: <Widget>[
+           ListTile(
+             title: Text("Pressure",
+               style: titleStyle(),),
+           ),
+           ListTile(
+             title: Text(
+               "${field['main']['pressure']} Psi".toString(),
+               style: detailStyle(),
+             ),
+           ),
+         ],
+       ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ListTile(
+              title: Text("Humidity",
+                style: titleStyle(),),
+            ),
+            ListTile(
+              title: Text(
+                "${field['main']['humidity']} %".toString(),
+                style: detailStyle(),
+              ),
+            ),
+          ],
         ),
-        ListTile(
-          title: Text(
-            "Humidity: ${field['main']['humidity']} %".toString(),
-            style: detailStyle(),
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ListTile(
+              title: Text("Wind Speed",
+                style: titleStyle(),),
+            ),
+            ListTile(
+              title: Text(
+                "${field['wind']['speed']} %".toString(),
+                style: detailStyle(),
+              ),
+            ),
+          ],
         ),
-        ListTile(
-          title: Text(
-            "Wind Speed: ${field['wind']['speed']} Mph".toString(),
-            style: detailStyle(),
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ListTile(
+              title: Text("Latitude",
+                style: titleStyle(),),
+            ),
+            ListTile(
+              title: Text(
+                "${field['coord']['lat']} °".toString(),
+                style: detailStyle(),
+              ),
+            ),
+          ],
         ),
-        ListTile(
-          title: Text(
-            "Latitude:  ${field['coord']['lat'].toStringAsFixed(0)}"+ "°",
-            style: detailStyle(),
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ListTile(
+              title: Text("Longitude",
+                style: titleStyle(),),
+            ),
+            ListTile(
+              title: Text(
+                "${field['coord']['lon']} °".toString(),
+                style: detailStyle(),
+              ),
+            ),
+          ],
         ),
-        ListTile(
-          title: Text(
-            "Longitude: ${field['coord']['lon'].toStringAsFixed(0)}"+ "°",
-            style: detailStyle(),
-          ),
-        )
 
       ],),
     );
